@@ -4,7 +4,6 @@ import pandas as pd
 from kafka import KafkaProducer
 import shlex, subprocess
 import time
-import numpy as np
 
 
 subprocess.call(shlex.split('kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic taxiEventsFlow'))
