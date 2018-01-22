@@ -16,6 +16,6 @@ def tripToKafka(trip):
 	tripString=trip.astype(str).str.cat(sep=',')
 	future = producer.send('taxiEventsFlow',tripString.encode('utf-8'))
 	result = future.get(timeout=1)
-	time.sleep(.50)
+	time.sleep(.05)
 
 dfTrips.apply(tripToKafka,axis=1)
